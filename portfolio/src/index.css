@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "system-ui", "sans-serif";
+  --color-preto-fosco: #121212;
+  --color-branco-neve: #F8FAFC;
+  --color-destaque: #10B981; /* Emerald/Verde */
+  --color-dark-card: #1E1E1E;
+  --color-dark-border: #333333;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-preto-fosco text-branco-neve font-sans antialiased selection:bg-destaque selection:text-preto-fosco;
+  }
+
+  /* Custom Scrollbar for a more premium feel */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-preto-fosco;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-dark-border rounded-full hover:bg-gray-500 transition-colors;
+  }
+}
